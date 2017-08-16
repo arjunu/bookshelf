@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import * as styles from './App.css';
+import Login from '../../components/Login/Login';
 
 class App extends React.Component {
 
@@ -13,14 +14,13 @@ class App extends React.Component {
 
     render() {
 
-        return <div>
-            Bookshelf
-        </div>;
+        const {loggedIn} = this.props;
+
+        return !loggedIn ? <Login/> : <div></div>;
     }
 }
 
-App.propTypes = {
-};
+App.propTypes = {};
 
 export function mapStateToProps(state) {
 
