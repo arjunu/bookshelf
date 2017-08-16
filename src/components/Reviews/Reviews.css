@@ -1,10 +1,16 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
 .header {
     height: 70px;
-    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);*/
+    border-bottom: 1px solid rgba(0, 0, 0, .0975);
+    display: flex;
+    align-items: center;
 }
 
 .title {
-    display: inline-block;
     float: left;
     margin: 20px 15px;
     font-size: 25px;
@@ -16,13 +22,24 @@
     color: #4c4c4c;
 }
 
+.logout {
+    position: absolute;
+    right: 20px;
+    margin: auto;
+    cursor: pointer;
+}
+
 .cardList {
     padding: 15px;
+    background: #fafafa;
+    width: 100%;
+    height: 100%;
 }
 
 .card {
+    background: white;
     max-width: 720px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    border: 1px solid #e6e6e6;
     padding: 15px;
 }
 
@@ -30,8 +47,10 @@
     margin-bottom: 5px;
     display: inline-block;
     font-family: 'Roboto Slab', serif;
+    font-size: 20px;
 }
 
 .cardDescription {
     margin-top: 5px;
+    font-size: 15px;
 }

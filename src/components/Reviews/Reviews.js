@@ -8,6 +8,7 @@ const Header = () => (
         <span className={styles.title}>
             <a href="/">Bookshelf</a>
         </span>
+        <span className={styles.logout}>Logout</span>
     </div>
 );
 
@@ -33,7 +34,7 @@ export default class ComponentName extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className={styles.wrapper}>
                 <Header/>
                 <div className={styles.cardList}>
                     <Card/>
