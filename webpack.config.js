@@ -31,6 +31,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(ttf|eot|otf|svg|png|gif|woff2|woff|jpg(2)?)(\?[a-z0-9]+)?$/,
+                loader: 'file-loader'
+            },
+            {
                 test: /\.css$/,
                 exclude: [/styles.css/],
                 use: [

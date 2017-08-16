@@ -1,0 +1,37 @@
+.header {
+    height: 70px;
+    /*box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);*/
+}
+
+.title {
+    display: inline-block;
+    float: left;
+    margin: 20px 15px;
+    font-size: 25px;
+}
+
+.title a {
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+    color: #4c4c4c;
+}
+
+.cardList {
+    padding: 15px;
+}
+
+.card {
+    max-width: 720px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    padding: 15px;
+}
+
+.cardTitle {
+    margin-bottom: 5px;
+    display: inline-block;
+    font-family: 'Roboto Slab', serif;
+}
+
+.cardDescription {
+    margin-top: 5px;
+}

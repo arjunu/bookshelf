@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import * as styles from './App.css';
 import Login from '../../components/Login/Login';
+import Reviews from '../../components/Reviews/Reviews';
 
 class App extends React.Component {
 
@@ -14,9 +15,9 @@ class App extends React.Component {
 
     render() {
 
-        const {loggedIn} = this.props;
+        const {loggedIn = true} = this.props;
 
-        return !loggedIn ? <Login/> : <div></div>;
+        return !loggedIn ? <Login/> : <Reviews/>;
     }
 }
 
