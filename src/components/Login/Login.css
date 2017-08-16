@@ -6,6 +6,13 @@
     justify-content: center;
 }
 
+.title {
+    text-align: center;
+    display: block;
+    margin: 0 0 15px;
+    color: #656161;
+}
+
 .formWrapper {
     width: 360px;
     padding: 50px;

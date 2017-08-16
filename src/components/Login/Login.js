@@ -5,6 +5,7 @@ import * as styles from './Login.css';
 const Login = () => {
     return <div className={styles.wrapper}>
         <div className={styles.formWrapper}>
+            <h1 className={styles.title}>Bookshelf</h1>
             <form className="login-form">
                 <input className={styles.input}
                        type="text"
