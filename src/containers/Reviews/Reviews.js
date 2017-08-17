@@ -4,15 +4,19 @@ import * as styles from './Reviews.css';
 import ReactStars from "react-stars";
 import AddReviewPopup from '../../containers/AddReviewPopup/AddReviewPopup';
 import PropTypes from 'prop-types';
-import {loadUserReviews} from "../../actions";
+import {loadUserReviews, logout} from "../../actions";
 import {connect} from 'react-redux';
 
-const Header = () => (
+const Header = ({onLogout}) => (
     <div className={styles.header}>
         <span className={styles.title}>
             <a href="/">Bookshelf</a>
         </span>
-        <span className={styles.logout}>Logout</span>
+        <span className={styles.logout}
+              onClick={onLogout}
+        >
+            Logout
+        </span>
     </div>
 );
 
@@ -60,13 +64,13 @@ class Reviews extends React.Component {
 
         return (
             <div className={styles.wrapper}>
-                <Header/>
+                <Header onLogout={() => this.props.dispatch(logout())}/>
                 <div className={styles.cardList}>
                     <Add/>
                     {reviews && reviews.map(review => <Card key={review.get("id")}
-                                                 title={review.get("title")}
-                                                 rating={review.get("rating")}
-                                                 description={review.get("review")}
+                                                            title={review.get("title")}
+                                                            rating={review.get("rating")}
+                                                            description={review.get("review")}
 
                     />)}
                 </div>

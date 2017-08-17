@@ -15,7 +15,7 @@ export function* caller(action) {
         console.log(response);
 
         if (response && response.length > 0)
-            yield put(onLoginSuccess({userId: response[0]}));
+            yield put(onLoginSuccess({user: response[0]}));
         else
             yield put(onLoginError({error: "Invalid credentials"}));
 
