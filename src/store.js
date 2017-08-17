@@ -18,7 +18,7 @@ export default function configureStore(initialState) {
         createReducer(), initialState, enhancer
     );
 
-    // sagaMiddleware.run(sagas);
+    sagas.forEach(saga => sagaMiddleware.run(saga));
 
     return store;
 }

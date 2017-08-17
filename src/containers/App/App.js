@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import * as styles from './App.css';
 import Login from '../../components/Login/Login';
-import Reviews from '../../components/Reviews/Reviews';
+import Reviews from '../Reviews/Reviews';
 
 class App extends React.Component {
 
