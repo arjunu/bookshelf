@@ -2,8 +2,15 @@
   "users": [
     {
       "id": 1,
-      "name": "Sam",
-      "username": "sam"
+      "name": "Arjun",
+      "username": "arjun",
+      "password": "arjun"
+    },
+    {
+      "id": 2,
+      "name": "Ulas",
+      "username": "ulas",
+      "password": "ulas"
     }
   ],
   "reviews": [

@@ -4,20 +4,22 @@ import {connect} from 'react-redux';
 import * as styles from './App.css';
 import Login from '../../components/Login/Login';
 import Reviews from '../Reviews/Reviews';
+import {login} from "../../actions";
 
 class App extends React.Component {
 
     constructor(props, context) {
         super(props, context);
-
-        this.state = {};
     }
 
     render() {
 
-        const {loggedIn = true} = this.props;
+        const {loggedIn, loginError} = this.props;
 
-        return !loggedIn ? <Login/> : <Reviews/>;
+        return !loggedIn ? <Login onLogin={(username, password) => this.props.dispatch(login({username, password}))}
+                                               error={loginError}
+            /> :
+            <Reviews/>;
     }
 }
 
@@ -25,7 +27,10 @@ App.propTypes = {};
 
 export function mapStateToProps(state) {
 
-    return {};
+    return {
+        loggedIn: state.global.getIn(["user", "loggedIn"]),
+        loginError: state.global.getIn(["user", "error"]),
+    };
 }
 
 export default connect(mapStateToProps)(App);

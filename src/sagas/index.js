@@ -1,3 +1,4 @@
+import login from './login.saga';
 import loadUserReviewsSaga from './loadUserReviews.saga';
 
-export default [loadUserReviewsSaga];
+export default [login, loadUserReviewsSaga];
