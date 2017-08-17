@@ -2,6 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import * as styles from './Reviews.css';
 import ReactStars from "react-stars";
+import AddReviewPopup from '../../containers/AddReviewPopup/AddReviewPopup';
+import PropTypes from 'prop-types';
+
 
 const Header = () => (
     <div className={styles.header}>
@@ -29,6 +32,12 @@ const Card = () => (
     </div>
 );
 
+const Add = () => (
+    <button className={styles.add}>
+        +Add Review
+    </button>
+);
+
 export default class ComponentName extends React.Component {
 
     render() {
@@ -37,8 +46,10 @@ export default class ComponentName extends React.Component {
             <div className={styles.wrapper}>
                 <Header/>
                 <div className={styles.cardList}>
+                    <Add/>
                     <Card/>
                 </div>
+                <AddReviewPopup/>
             </div>
         );
     }
