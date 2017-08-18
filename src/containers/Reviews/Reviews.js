@@ -55,7 +55,7 @@ class Reviews extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(loadUserReviews({
-            userId: 1
+            userId: this.props.userId
         }));
     }
 
