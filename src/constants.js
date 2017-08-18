@@ -11,6 +11,8 @@ export const ACTION_LOGOUT = "LOGOUT";
 export const ACTION_LOAD_USER_REVIEWS = "LOAD_USER_REVIEWS";
 export const ACTION_LOAD_USER_REVIEWS_SUCCESS = "LOAD_USER_REVIEWS_SUCCESS";
 
+export const ACTION_ADD_REVIEW = "ADD_REVIEW";
+
 /**
  * URLS
  * @type {string}

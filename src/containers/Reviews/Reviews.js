@@ -2,9 +2,9 @@ import React from 'react';
 import classNames from 'classnames';
 import * as styles from './Reviews.css';
 import ReactStars from "react-stars";
-import AddReviewPopup from '../../containers/AddReviewPopup/AddReviewPopup';
+import AddReviewPopup from '../../components/AddReviewPopup/AddReviewPopup';
 import PropTypes from 'prop-types';
-import {loadUserReviews, logout} from "../../actions";
+import {addReview, loadUserReviews, logout} from "../../actions";
 import {connect} from 'react-redux';
 
 const Header = ({onLogout}) => (
@@ -36,8 +36,9 @@ const Card = ({title, rating, description}) => (
     </div>
 );
 
-const Add = () => (
-    <button className={styles.add}>
+const Add = ({onClick}) => (
+    <button className={styles.add}
+            onClick={onClick}>
         +Add Review
     </button>
 );
@@ -60,13 +61,14 @@ class Reviews extends React.Component {
 
     render() {
 
-        const {reviews} = this.props;
+        const {reviews, dispatch} = this.props;
 
         return (
             <div className={styles.wrapper}>
-                <Header onLogout={() => this.props.dispatch(logout())}/>
+                <Header onLogout={() => dispatch(logout())}/>
+
                 <div className={styles.cardList}>
-                    <Add/>
+                    <Add onClick={() => this.setState({showAddReviewPopup: true})}/>
                     {reviews && reviews.map(review => <Card key={review.get("id")}
                                                             title={review.get("title")}
                                                             rating={review.get("rating")}
@@ -74,7 +76,11 @@ class Reviews extends React.Component {
 
                     />)}
                 </div>
-                {this.state.showAddReviewPopup && <AddReviewPopup/>}
+
+                {this.state.showAddReviewPopup &&
+                <AddReviewPopup onSave={(title, rating, review) => dispatch(addReview({title, rating, review}))}
+                                onCancel={() => this.setState({showAddReviewPopup: false})}
+                />}
             </div>
         );
     }
