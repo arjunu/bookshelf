@@ -61,7 +61,7 @@ class Reviews extends React.Component {
 
     render() {
 
-        const {reviews, dispatch} = this.props;
+        const {reviews, dispatch, userId} = this.props;
 
         return (
             <div className={styles.wrapper}>
@@ -78,7 +78,10 @@ class Reviews extends React.Component {
                 </div>
 
                 {this.state.showAddReviewPopup &&
-                <AddReviewPopup onSave={(title, rating, review) => dispatch(addReview({title, rating, review}))}
+                <AddReviewPopup onSave={(title, rating, review) => {
+                    dispatch(addReview({title, rating, review, userId}));
+                    this.setState({showAddReviewPopup: false});
+                }}
                                 onCancel={() => this.setState({showAddReviewPopup: false})}
                 />}
             </div>
@@ -91,7 +94,8 @@ Reviews.propTypes = {};
 export function mapStateToProps(state) {
 
     return {
-        reviews: state.global.get("reviews")
+        reviews: state.global.get("reviews"),
+        userId: state.global.getIn(["user", "id"]),
     };
 }
 

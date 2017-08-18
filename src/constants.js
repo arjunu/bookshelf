@@ -20,3 +20,4 @@ export const ACTION_ADD_REVIEW = "ADD_REVIEW";
 export const URL_LOGIN = "/users";
 
 export const URL_LOAD_USER_REVIEWS = "/reviews";
+export const URL_ADD_REVIEW = "/reviews";

@@ -6,6 +6,7 @@ import {ACTION_LOAD_USER_REVIEWS_SUCCESS, ACTION_LOGIN_ERROR, ACTION_LOGIN_SUCCE
 const getInitalState = () => fromJS({
     user: {
         loggedIn: localStorage.getItem("loggedIn"),
+        id: localStorage.getItem("id"),
         error: ""
     }
 });

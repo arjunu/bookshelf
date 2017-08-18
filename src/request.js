@@ -25,8 +25,8 @@ export default function request(url, options = {}) {
         ...options
     }).then(response => {
         //return if response status code === 200 else throwing error
-
-        if (response.status === 200 && response.length !== 0) {
+        console.log({response});
+        if ((response.status === 200 || response.status === 201) && response.length !== 0) {
             return response.json();
         }
 
