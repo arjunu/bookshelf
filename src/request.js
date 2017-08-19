@@ -6,7 +6,6 @@ import 'whatwg-fetch';
  * @param options
  * @return object
  * **/
-
 export default function request(url, options = {}) {
     if (options.body)
         options.body = typeof options.body !== 'string' ? JSON.stringify(options.body) : options.body;
