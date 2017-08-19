@@ -65,7 +65,10 @@ class Reviews extends React.Component {
 
         return (
             <div className={styles.wrapper}>
-                <Header onLogout={() => dispatch(logout())}/>
+                <Header onLogout={() => {
+                    localStorage.clear();
+                    dispatch(logout());
+                }}/>
 
                 <div className={styles.cardList}>
                     <Add onClick={() => this.setState({showAddReviewPopup: true})}/>

@@ -12,7 +12,6 @@ export function* caller(action) {
 
     try {
         const response = yield call(request, `${URL_LOAD_USER_REVIEWS}?userId=${userId}`);
-        console.log(response);
 
         yield put(onLoadUserReviewsSuccess({reviews: response}));
 

@@ -12,10 +12,15 @@ export function* caller(action) {
 
     try {
         const response = yield call(request, `${URL_LOGIN}?username=${username}&&password=${password}`);
-        console.log(response);
 
-        if (response && response.length > 0)
-            yield put(onLoginSuccess({user: response[0]}));
+        if (response && response.length > 0) {
+            const {id, username, name} = response[0];
+
+            localStorage.setItem("loggedIn", true);
+            localStorage.setItem("id", id);
+            localStorage.setItem("username", username);
+            yield put(onLoginSuccess({id, username, name}));
+        }
         else
             yield put(onLoginError({error: "Invalid credentials"}));
 
