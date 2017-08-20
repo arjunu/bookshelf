@@ -23,3 +23,11 @@ To view the app go to localhost:5000
 ```sh
 npm test 
 ```
+### To get production build:
+
+```sh
+npm run clean #cleans up old coverage & build 
+npm run build #creates public folder
+npm run server
+```
+To view the app go to localhost:3000
