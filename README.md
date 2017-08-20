@@ -27,7 +27,7 @@ npm test
 
 ```sh
 npm run clean #cleans up old coverage & build 
-npm run build #creates public folder
-npm run server
+npm run build #runs tests & creates public folder
+npm run server #starts json-server
 ```
 To view the app go to localhost:3000
