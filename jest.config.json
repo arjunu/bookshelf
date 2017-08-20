@@ -9,6 +9,9 @@
   "moduleNameMapper": {
     "\\.(css|less)$": "identity-obj-proxy"
   },
+  "setupFiles": [
+    "jest-localstorage-mock"
+  ],
   "collectCoverageFrom": [
     "src/**/*.{js,jsx}",
     "!**/node_modules/**"
