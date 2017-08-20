@@ -3,9 +3,9 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const entry = './src/index.js';// the entry point of our app'
+const entry = './src/index.js';// the entry point of the app
 
-const main = process.env.NODE_ENV === "production" ? [
+const main = process.env.NODE_ENV !== "production" ? [
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
     `webpack-dev-server/src?http://localhost:5000`,
@@ -24,7 +24,7 @@ module.exports = {
         ],
     },
     output: {
-        path: __dirname + `/__build__`,
+        path: __dirname + `/public`,
         filename: '[name].js',
         publicPath: '/'
     },

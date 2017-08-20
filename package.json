@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf ./__build__; rimraf ./coverage",
+    "clean": "rimraf ./public; rimraf ./coverage",
     "start": "node dev.server.js",
     "server": "json-server --watch db.json",
     "test": "cross-env NODE_ENV=testing jest --coverage --config=./jest.config.json",
     "test-watch": "npm test -- --watch",
-    "build": "cross-env NODE_ENV=production webpack --display-error-details --config webpack.config.js --progress"
+    "build": "npm test && cross-env NODE_ENV=production webpack --display-error-details --config webpack.config.js --progress"
   },
   "repository": {
     "type": "git",
