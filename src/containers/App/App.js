@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import * as styles from './App.css';
 import Login from '../../components/Login/Login';
 import Reviews from '../Reviews/Reviews';
 import {login} from "../../actions";
@@ -17,13 +16,16 @@ class App extends React.Component {
         const {loggedIn, loginError} = this.props;
 
         return !loggedIn ? <Login onLogin={(username, password) => this.props.dispatch(login({username, password}))}
-                                               error={loginError}
+                                  error={loginError}
             /> :
             <Reviews/>;
     }
 }
 
-App.propTypes = {};
+App.propTypes = {
+    loggedIn: PropTypes.bool,
+    loginError: PropTypes.string
+};
 
 export function mapStateToProps(state) {
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import * as styles from './Reviews.css';
 import ReactStars from "react-stars";
 import AddReviewPopup from '../../components/AddReviewPopup/AddReviewPopup';
@@ -92,7 +91,25 @@ class Reviews extends React.Component {
     }
 }
 
-Reviews.propTypes = {};
+Header.propTypes = {
+    onClick: PropTypes.func
+};
+
+Card.propTypes = {
+    title: PropTypes.string,
+    rating: PropTypes.number,
+    description: PropTypes.string
+};
+
+Add.propTypes = {
+    onClick: PropTypes.func
+};
+
+Reviews.propTypes = {
+    reviews: PropTypes.object,
+    dispatch: PropTypes.func,
+    userId: PropTypes.string
+};
 
 export function mapStateToProps(state) {
 

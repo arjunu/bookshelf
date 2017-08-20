@@ -62,4 +62,7 @@ export default class AddReviewPopup extends React.Component {
     }
 }
 
-AddReviewPopup.propTypes = {};
+AddReviewPopup.propTypes = {
+    onSave: PropTypes.func,
+    onCancel: PropTypes.func
+};

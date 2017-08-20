@@ -1,4 +1,4 @@
-import {call, put, fork, take, cancel} from 'redux-saga/effects';
+import {call, put, take} from 'redux-saga/effects';
 import request from "../request";
 import {ACTION_LOAD_USER_REVIEWS, URL_LOAD_USER_REVIEWS} from "../constants";
 import {onLoadUserReviewsSuccess} from "../actions";
@@ -20,6 +20,9 @@ export function* caller(action) {
     }
 }
 
+/**
+ * Watches for ACTION_LOAD_USER_REVIEWS and calls caller
+ */
 export default function* saga() {
     //noinspection InfiniteLoopJS
     while (true)

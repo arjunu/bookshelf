@@ -1,4 +1,4 @@
-import {call, put, fork, take, cancel} from 'redux-saga/effects';
+import {call, put, take} from 'redux-saga/effects';
 import request from "../request";
 import {ACTION_LOGIN, URL_LOGIN} from "../constants";
 import {onLoginError, onLoginSuccess} from "../actions";
@@ -13,9 +13,11 @@ export function* caller(action) {
     try {
         const response = yield call(request, `${URL_LOGIN}?username=${username}&&password=${password}`);
 
+        //if response in empty then credentials are valid
         if (response && response.length > 0) {
             const {id, username, name} = response[0];
 
+            //save user details in local storage
             localStorage.setItem("loggedIn", true);
             localStorage.setItem("id", id);
             localStorage.setItem("username", username);
@@ -28,10 +30,12 @@ export function* caller(action) {
         console.error(error);
 
         yield put(onLoginError({error}));
-
     }
 }
 
+/**
+ * Watches for ACTION_LOGIN and calls caller
+ */
 export default function* saga() {
     //noinspection InfiniteLoopJS
     while (true)

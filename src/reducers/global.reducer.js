@@ -1,11 +1,10 @@
 import {createReducerFromObject} from "../utils";
 import {fromJS} from 'immutable';
-import {} from '../actions';
 import {ACTION_LOAD_USER_REVIEWS_SUCCESS, ACTION_LOGIN_ERROR, ACTION_LOGIN_SUCCESS, ACTION_LOGOUT} from "../constants";
 
 export const getInitialState = () => fromJS({
     user: {
-        loggedIn: localStorage.getItem("loggedIn"),
+        loggedIn: localStorage.getItem("loggedIn") === "true",
         id: localStorage.getItem("id"),
         error: ""
     }

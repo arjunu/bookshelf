@@ -4,7 +4,7 @@ import {ACTION_ADD_REVIEW, URL_ADD_REVIEW} from "../constants";
 import {loadUserReviews} from "../actions";
 
 /**
- * Makes GET request
+ * Makes POST request
  * @returns {*}
  */
 export function* caller(action) {
@@ -17,6 +17,9 @@ export function* caller(action) {
     }
 }
 
+/**
+ * Watches for ACTION_ADD_REVIEW and calls caller
+ */
 export default function* saga() {
     //noinspection InfiniteLoopJS
     while (true)

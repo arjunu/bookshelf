@@ -45,4 +45,7 @@ export default class Login extends React.Component {
     }
 }
 
-Login.propTypes = {};
+Login.propTypes = {
+    onLogin: PropTypes.func,
+    error: PropTypes.string
+};
