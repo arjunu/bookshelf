@@ -14,9 +14,8 @@
     "jest-localstorage-mock"
   ],
   "collectCoverageFrom": [
-    "lib/**/*.{js,jsx}",
-    "!**/node_modules/**",
-    "!**/vendor/**"
+    "src/**/*.{js,jsx}",
+    "!**/node_modules/**"
   ],
   "testEnvironment": "node",
   "transform": {

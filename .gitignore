@@ -50,3 +50,4 @@ fabric.properties
 .idea/typescript-compiler.xml
 
 npm-debug.log
+*coverage
