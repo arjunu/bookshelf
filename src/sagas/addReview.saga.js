@@ -1,7 +1,7 @@
 import {call, put, fork, take, cancel} from 'redux-saga/effects';
 import request from "../request";
 import {ACTION_ADD_REVIEW, URL_ADD_REVIEW} from "../constants";
-import {loadUserReviews, onLoadUserReviewsSuccess} from "../actions";
+import {loadUserReviews} from "../actions";
 
 /**
  * Makes GET request
