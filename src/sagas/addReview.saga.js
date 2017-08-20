@@ -1,4 +1,4 @@
-import {call, put, fork, take, cancel} from 'redux-saga/effects';
+import {call, put, take} from 'redux-saga/effects';
 import request from "../request";
 import {ACTION_ADD_REVIEW, URL_ADD_REVIEW} from "../constants";
 import {loadUserReviews} from "../actions";
