@@ -108,7 +108,7 @@ Add.propTypes = {
 Reviews.propTypes = {
     reviews: PropTypes.object,
     dispatch: PropTypes.func,
-    userId: PropTypes.string
+    userId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 export function mapStateToProps(state) {

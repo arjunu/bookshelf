@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf ./__build__; rimraf ./coverage",
     "start": "node dev.server.js",
     "server": "json-server --watch db.json",
     "test": "cross-env NODE_ENV=testing jest --coverage --config=./jest.config.json",
@@ -54,6 +55,7 @@
     "react-test-renderer": "^15.6.1",
     "redux": "^3.7.1",
     "redux-saga": "^0.15.4",
+    "rimraf": "^2.5.2",
     "shortid": "^2.2.8",
     "style-loader": "^0.18.2",
     "webpack": "^3.5.5",
