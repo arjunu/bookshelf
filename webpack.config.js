@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entry = './src/index.js';// the entry point of the app
 
-const main = process.env.NODE_ENV !== "production" ? [
+const main = process.env.NODE_ENV === "development" ? [
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
     `webpack-dev-server/src?http://localhost:5000`,
